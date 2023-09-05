@@ -39,7 +39,7 @@ if [ -r /etc/os-release ]; then
     else
       sudo mkdir -p "$WORKING_DIR"
       sudo chown $(whoami) "$WORKING_DIR"
-      git clone https://github.com/it-army-ua-scripts/ADSS.git "$WORKING_DIR"
+      git clone -b feature-2 https://github.com/it-army-ua-scripts/ADSS.git "$WORKING_DIR"
     fi
 
     sudo ln -sf "$WORKING_DIR/bin/adss" /usr/local/bin/adss
