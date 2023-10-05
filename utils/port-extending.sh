@@ -4,6 +4,8 @@ extend_ports() {
   port_range_string="net.ipv4.ip_local_port_range=16384 65535"
   specified_file="/usr/lib/sysctl.d/port-extending.conf"
 
+  sudo touch $specified_file
+
   if [[ -f "$specified_file" ]]; then
     if [[ $(grep -L "$port_range_string" "$specified_file") ]]; then
       extend() {
